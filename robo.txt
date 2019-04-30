@@ -1,0 +1,132 @@
+https://github.com/nokia/RED/releases/download/0.8.5/RED_feature_0.8.5.201805161001.zip
+
+
+*** Settings *** 
+Library    Selenium2Library 
+Library    OperatingSystem 
+Suite setup    Setup chromedriver 
+
+*** Variables ***
+${First Name}   Nirmal
+${Last Name}    Maharana
+${Phone}   XXXXXXXXX
+${Email}    XXXXXX@gmail.com
+${Address}   Marathahalli
+${Address1}   Near Railway Gate
+${City}    Banglore
+${State}   Karnataka
+${Postal Code}    560037
+${Country}   92
+${User Name}    Nirmalm
+${Password}   123456
+${Confirm Password}    123456
+${Browser}      Chrome
+${SiteUrl}      http://newtours.demoaut.com 
+${Delay}          3s
+
+*** Test case *** 
+Register Test  
+        [Tags]   Mercury 
+    Given I navigate to newtours site 
+    Then I Set Selenium Speed
+    When I click Register
+    Then I Enter First Name
+    Then I Enter Last Name
+    Then I Enter Phone
+    Then I Enter Email
+    Then I Enter Address
+    Then I Enter Address1
+    Then I Enter City
+    Then I Enter State
+    Then I Enter Postal Code
+    Then I Select Country  
+    Then I Enter User Name
+    Then I Enter Password
+    Then I Enter Confirm Password
+    Then I click on Submit 
+    Then I click SignIn
+    Then I Enter SignIN User Name
+    Then I Enter SignInPassword
+    Then I click on Login
+    Then I close browser
+
+*** Keywords ***
+
+Setup chromedriver 
+    Set Environment variable    webdriver.chrome.driver    ${EXECDIR}/chromedriver.exe 
+         
+I navigate to newtours site
+    open browser    ${SiteUrl}    ${Browser}
+    Maximize Browser Window
+    
+I Set Selenium Speed
+    Set Selenium Implicit Wait  2 seconds
+        
+I click Register    
+     Click Element  //a[text()='REGISTER']     
+     
+Then I Enter First Name
+    Input Text  name:firstName    ${First Name} 
+
+Then I Enter Last Name
+    Input Text  name:lastName     ${Last Name}
+    
+Then I Enter Phone
+    Input Text  name:phone    ${Phone}
+
+Then I Enter Email
+    Input Text  name:userName   ${Email} 
+    
+Then I Enter Address
+    Input Text  name:address1    ${Address} 
+    
+Then I Enter Address1
+    Input Text  name:address2   ${Address1}  
+    
+Then I Enter City
+    Input Text  name:city  ${City}  
+    
+Then I Enter State
+    Input Text  name:state  ${State}  
+    
+Then I Enter Postal Code
+    Input Text  name:postalCode      ${Postal Code}
+
+Then I Select Country
+    Mouse over  name:country
+    Select From List by Value  //select[@name='country']    ${Country}  
+        
+Then I Enter User Name 
+    Input Text  id:email   ${User Name}    
+
+Then I Enter Password 
+    Input Text  name:password  ${Password}
+    
+Then I Enter Confirm Password 
+    Input Text  name:confirmPassword    ${Confirm Password}
+  
+Execute JavaScript    window.scrollTo(0, 600)  
+    
+I click on Submit
+    click button   name:register
+
+*** Key Words ***
+
+     set selenium implicit wait    ${Delay} 
+
+I click SignIn   
+     Click Element  //a[text()=' sign-in ']  
+
+I Enter SignIN User Name 
+    Input Text  name:userName   ${User Name} 
+     
+I Enter SignInPassword     
+    Input Text  @name:password     ${Password} 
+     
+I click on Login
+    click button   name:login
+    
+    set selenium implicit wait    ${Delay}      
+    
+I close browser
+    Close Browser   

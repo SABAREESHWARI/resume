@@ -1,0 +1,225 @@
+Compare surgeries:
+
+ 
+
+*** Settings ***
+
+Library    Selenium2Library
+
+Library    OperatingSystem
+
+Suite Setup    Setup chromedriver
+
+ 
+
+ 
+
+*** Test Case ****
+
+Explore Surgeries
+
+    [Tags]    Types of Surgeries
+
+    Given Navigate to Health partner site
+
+    When I click on compare surgeries
+
+    And Enter the Height and Weight
+
+    And Click the Calculate BMI
+
+    And Complete the Questions below
+
+    Then Click the Submit
+
+    [TearDown]    Close all browsers
+
+   
+
+*** Keywords ***
+
+Setup chromedriver
+
+    Set Environment Variable    webdriver.chrome.driver    ${EXECDIR}/chromedriver.exe
+
+   
+
+Navigate to Health partner site
+
+   
+
+    open browser    https://weightlosssurgery.thehealthpartner.com/    browser=chrome
+
+   
+
+I click on compare surgeries
+
+    Click Element    xpath=//a[.='Compare Surgeries']
+
+    Execute Javascript    window.scroll(0,100)
+
+   
+
+Enter the Height and Weight
+
+    mouse over    //select[@id='edit-height']
+
+    Select From List by Value    xpath=//select[@id='edit-height']    61   
+
+    mouse over    //input[@id='edit-weight']
+
+    Input Text    //input[@name='weight']    250
+
+   
+
+Click the Calculate BMI
+
+    Click Element    xpath=(//a[@href='#'])[1]
+
+    Execute Javascript    window.scroll(0,50)
+
+   
+
+Complete the Questions below
+
+    Input Text    //input[@name='age']    31
+
+    Set Selenium Speed  1 seconds
+
+    Select From List by Value    xpath=//select[@name='gender']    female
+
+    Set Selenium Speed  1 seconds
+
+    mouse over    //select[@id='edit-race']
+
+    wait until element is visible    xpath=//select[@name='race']
+
+     
+
+    Select From List by Label    xpath=//select[@name='race']    Asian
+
+      
+
+    Select From List by Value    xpath=//select[@name='ethnicity']    other
+
+   
+
+    Select Checkbox    xpath=//input[@name='knee_hip_back']
+
+    Set Selenium Speed  1 seconds
+
+Click the Submit
+
+    Select Checkbox    xpath=//input[@name='terms_of_service']
+
+    Set Selenium Speed  1 seconds
+
+    Click Element    xpath=//button[@name='op']
+
+    Set Selenium Speed  1 seconds
+
+    Execute Javascript    window.scroll(0,500)
+
+ 
+
+ 
+
+Surgeon Location:
+
+ 
+
+***Settings ****
+
+Library    Selenium2Library
+
+Library    OperatingSystem
+
+Suite Setup    Setup chromedriver
+
+ 
+
+*** Test case ***
+
+Identify Surgeon Location
+
+    [Tags]    Surgeon location
+
+    Given Navigate to Health partner site
+
+    When Click on the Surgeon Locator
+
+    And Enter Required values and click submit
+
+    Then Search Results should display
+
+    [TearDown]    Close all browsers
+
+    
+
+*** Keywords ***
+
+Setup chromedriver
+
+    Set Environment Variable    webdriver.chrome.driver    ${EXECDIR}/chromderdriver.exe
+
+   
+
+Navigate to Health partner site
+
+   
+
+    open browser    https://weightlosssurgery.thehealthpartner.com/    browser=chrome
+
+ 
+
+Click on the Surgeon Locator
+
+   
+
+    Click Element    xpath=//a[@title='Surgeon Locator Tool']
+
+    Execute Javascript    window.scroll(0,175)
+
+    Capture Page Screenshot   
+
+    
+
+Enter Required values and click submit
+
+    wait until element is visible    xpath=//input[@name='zipcode']
+
+    Input Text    xpath=//input[@name='zipcode']    76107
+
+  
+
+    mouse over    //select[@name='radius']
+
+    wait until element is visible    xpath=//select[@name='radius']
+
+    Select From List By Value    xpath=//select[@name='radius']    string:25
+
+    
+
+    Select Checkbox    xpath=//input[@name='Bypass']
+
+   
+
+    Click Element    xpath=//button[@class='btn btn-danger btn-surgeon-submit']
+
+  
+
+    wait until element is visible    xpath=//h2[@class='search-results']  
+
+    ${Value}=    Get Text    xpath=//h2[@class='search-results']
+
+    Set Test Variable    ${Content}    ${Value}
+
+    
+
+${Result} should display   
+
+    Should Contain    ${Result}    ${Content}
+
+    Execute javascript    window.scroll(0,1000)
+
+    capture page screenshot

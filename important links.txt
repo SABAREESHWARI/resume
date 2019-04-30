@@ -1,0 +1,54 @@
+important links
+https://confluence.jnj.com/display/ABBQ/Hyperion+Documentation
+
+desktop details: mouse-6K174H4926B
+ KEYBOARD- 0810606
+CPU - PG00VLJB
+MONITOR - VK927776
+
+Laptop details: serial no- 6NPHGC2
+
+training videos:
+
+https://capgemini.sharepoint.com/sites/JnJGlobalOperations/Shared%20Documents/Testing%20Deal/Tool%20Trainings/ALM%20Walkthrough_Rituraj%20Baruah_14Feb%202019%202.02.15%20PM.mp4 
+
+Agile 
+https://confluence.jnj.com/display/EAC/Enterprise+Agile+Curriculum
+
+[?15-?03-?2019 11:50]  Anand, Abhishek:  
+http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html 
+https://confluence.jnj.com/display/ABET/Robot+Framework+Training
+
+Xray Integration Framework and documents in that BDD  Framework and Cucumber tool.
+https://confluence.jnj.com/display/TAAS/Jira-Xray+Integration:
+
+this is for future Bitbucket access to different projects.
+https://appdevtools.jnj.com/home.html#/apps
+ 
+
+WINDCHILL
+https://support.ptc.com/help/windchill/wc110_hc/whc_en/index.html#page/Windchill_Help_Center%2FWCFundamentals_LP.html%23
+
+
+HPALM URL : http://alm.jnj.com:8080/qcbin/start_a.jsp 
+
+
+
+https://jnj.sharepoint.com/teams/JJTSEESQATestingTransition/Shared%20Documents/Forms/AllItems.aspx?RootFolder=%2Fteams%2FJJTSEESQATestingTransition%2FShared%20Documents%2FProgram%20Documents%2FSogeti%2FTransition%20Documents%2F04_Knowledge%20Transfer%2F02_Foundation%20KT%2FAutomation%2FHybrid%20Framework&FolderCTID=0x0120002AA61C5C4FA9B64789C45C0514204443&View=%7BD60268E7-D37C-4194-ADF8-DEF3532004D3%7D 
+
+craft framework
+
+
+Xray framework
+ https://confluence.jnj.com/display/TAAS/Jira-Xray+Integration
+
+Sharepoint link
+https://capgemini.sharepoint.com/sites/JnJGlobalOperations/SitePages/Home.aspx
+
+https://jira.jnj.com
+
+Robot framework:
+http://robotframework.org/Selenium2Library/Selenium2Library.html#Input%20Text
+http://www.swtestacademy.com/getting-started-robotframework/
+http://robotframework.org/robotframework/latest/libraries/BuiltIn.html
+https://confluence.jnj.com/display/ABET/Robot+Framework+Training+Day+1

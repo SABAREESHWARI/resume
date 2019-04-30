@@ -1,0 +1,263 @@
+Sender Comments
+Description
+Objective:Verify PIE record workflow process. 
+
+Acceptance Criteria: The script should be executed successfully. 
+
+Pre-Requisites: 
+N/A 
+
+Parameters: 
+See Parameters Tab if any 
+Run Details
+Run ID	12891
+Exec Date	2016-12-20
+Exec Time	17:51:41
+Host	WDPYUSMJ12Y2X
+Status	Passed
+Duration	5709
+Tester	joconn15
+Operating System	Windows 7
+OS Service Pack	Service Pack 1
+OS Build Number	Build 7601
+Test Version Number	5
+Configuration ID	4314
+Draft Run	N
+Comments	
+  
+Elmo, Aurelie <amartin6>, 26/12/2016: Q CSV post execution approval
+Type	MANUAL
+Test Set ID	45642
+Name	UAT Scripts
+Open Date	2016-12-20
+Close Date	2016-12-31
+Status	Closed
+Modified	2016-12-31 09:38:12
+Comments on closure	
+Elmo, Aurelie 31/12/2016 15:38:11:TestSet Status has been changed from Open to Closed.No comments have been entered--------------------
+Type	hp.qc.test-set.default
+Test ID	3314
+Test Name	UAT-REACT-PIE-001 - Verify Product Issue Escalation Process
+Subject	UAT Scripts
+Status	Approved
+Designer	achoudh9
+Creation Date	2016-12-20
+Type	MANUAL
+Test plan	IM-SYSTEM
+Test objective	F_Specification
+Test risk class	Medium
+Execution Status	Passed
+Modified	2018-08-21 15:17:38
+Version Status	Checked_In
+Version Number	5
+ID	4314
+Test ID	3314
+Name	UAT-REACT-PIE-001 - Verify Product Issue Escalation Process
+Created by	achoudh9
+Creation date	2016-12-20
+Execution Status	Passed
+Modified	2016-12-20 17:51:41
+Data State	0
+Run Steps
+Name	Description	Expected Result	Actual Result	Status
+Step 1	
+Login to TW ETS <<<environment>>> with permissions to create a PIE record.
+Logged into TW ETS <<<environment>>>.
+Logged into TW QTS QA enviornment as Gen Initiator 27
+Passed
+Step 2	
+Create a new PIE record by entering all required fields and save the record. 
+Add print screen of the record created from the TrackWise Desktop.
+New PIE record is created and saved. 
+Print screen of the record is added.
+Create new PIE record
+Entered required fields
+Added PIA Facilitator
+Saved Record
+Passed
+Step 3	
+Log out as Initiator, and Login back as the PIA Facilitator. 
+Verify that the PIA facilitator has received the Notification. 
+Add print screen of the Notification.
+As a PIA facilitator received the notification when the record is created and in Opened State. 
+Print screen is added.
+Logged out as Initiator
+Logged in as PIA Faciliator
+Verified notification
+Print screen attached
+  
+Passed
+Step 4	
+Verify Meeting Minutes can be created from Opened state of the record. 
+Record MM created as MM #1 
+Add print screen of the meeting minutes record from TrackWise Desktop.
+Meeting Minutes can be created from the opened state of the record. 
+Print screen is added.
+Verified Meeting Minute document can be created from Opened state
+Added print screen per step
+Passed
+Step 5	
+Verify as a PIA Facilitator, 'Completed Initial Assessment' activity can be performed by applying e-signature. 
+Post the Summary. 
+Verify 'PIA Required' is set to Yes 
+Add print screen of the esignature window.
+As a PIA Facilitator, Completed Initial Assessment activity can be performed by applying eisgnature. 
+Print screen is added.
+Verified activity was available
+Changed PIA Required = Yes
+Printed screenshots
+Passed
+Step 6	
+Verify the PIE record moves to 'Investigation Required TollGate' state.
+The record moves to 'Investigation Required TollGate' state.
+Verified PIE moved to Investigation Required Tollgate
+Attached screenshot
+Passed
+Step 7	
+Refresh Desktop. 
+Verify the PIE record moves to Investigation is Progress state. 
+Add screen print of the record state from TrackWise desktop.
+PIE record moves to Investigation is Progress state. 
+Print screen is added from the desktop.
+Verified document moved to Investigation in Progress state
+Added screenshot
+Passed
+Step 8	
+Verify PIA Facilitator can perform the Revise activity. Fill the activity Summary. 
+Verify the record progresses back to 'Opened' State. 
+Add screen print of the record state from TrackWise desktop.
+PIE record moves to 'Opened' state. 
+Print screen is added from the desktop.
+Verified Revise activity was available
+Posted the revise activity
+Attached screenshots
+Passed
+Step 9	
+Progress the record to 'Investigation in Progress' state. 
+Add Print screen of the record.
+Record progresses to "Investigation in Progress" 
+Print screen is added.
+Progressed record to Investigation in Progress
+Attached screenshots
+Passed
+Step 10	
+Verify PIA Facilitator can perform "Create PIA Record" activity within the record. Fill the activity Summary. 
+Verify the record state moves to "Awaiting PIA Creation" and is in Locked State. 
+Add screen print of the record state from TrackWise desktop.
+Opened the PIE record and performed "Create PIA Record" activity. Record progresssed to "Awaiting PIA Creation" and is in Locked state. Print screen is added from the desktop.
+Verified Create PIA Record activity was available
+Posted activity
+Verified record moved to Awaiting PIA Creation
+Added screenshots
+Passed
+Step 11	
+Refresh the desktop. 
+Verify PIA record is created as a child of the PIE record. 
+Record the new PIA created as PIA #1. 
+Note the record Number. 
+Add screen print of the record state from TrackWise desktop.
+PIA #1 record created. Record number noted. Print screen is added from the desktop.
+Verified PIA record is created and child of PIE
+PIA record number is 319680
+Added screenshots
+Passed
+Step 12	
+Verify the PIE record moves to 'Investigation in Progress' state.
+Record progresses back to 'Investigation in Progress' state
+Verified PIE record is in Investigation in Progress state
+Passed
+Step 13	
+Verify Meeting Minutes can be created from 'Investigation in Progress' state of the record. Verify General Action can be created from 'Investigation in Progress' state of the record. Record GA created as GA #1 
+Record MM created as MM #2 
+Add print screen of the meeting minutes and General action records from TrackWise Desktop.
+MM #2 and GA #1 records were created in opened state. Print screen is added from the desktop.
+Verified Meeting Minute and General Action can be created from PIE in Investigation in Progress
+Created Meeting Minute Doc MM #2 319682
+Created General Action GA #1 319683
+Screenshots attached
+Passed
+Step 14	
+Verify PIA Facilitator, can perform the 'QRB Emergency' acitvity by selecting QRB Required = Yes. Fill the Activity Summary. Apply the Electronic Signature. 
+Add print screen of the record state from TrackWise Desktop.
+Record progressed to Quality Review Board Review state. Electronic Signaure Applied. Print screen is added from the desktop.
+Verified QRB Emergency was available in state
+Applied e-sig
+Attached all screenshots
+Passed
+Step 15	
+Verify PIA Facilitator, can perform the 'Revise' activity when record is in Quality Review Board Review state. Fill the Summary. 
+Verify the record progresses back to "Opened" State. 
+Add screen print of the record state from TrackWise desktop.
+PIE record moves back to "Opened" state. 
+Print screen is added from the desktop.
+Verified Revise was available in QRB Review
+Posted activity
+Applied e-sig
+Verified PIE in Opened state
+Screenshots attached
+Passed
+Step 16	
+Verify PIA Facilitator can progress the record to "Quality Review Board Review" state. 
+Add screen print of the record state from TrackWise desktop.
+PIE record moves back to "Quality Review Board Review" state from "Opened" state. 
+Print screen is added from the desktop.
+Moved PIE record to Investigation in Progress
+Confirmed acitivty Quality Review Board Review was available
+Moved PIE into QRB Review state
+Passed
+Step 17	
+Verify Meeting Minutes can be created from "Quality Review Board Review" state of the record. 
+Verify General Action can be created from "Quality Review Board Review" state of the record. 
+Verify Field Action can be created from "Quality Review Board Review" state of the record. 
+Record GA created in this step as GA #2 
+Record MM created in this step as MM #3 
+Record FA created in this step as FA #1 
+Add print screen of the GA #2, MM #3 and FA #1 records from TrackWise Desktop.
+MM #3, GA #2 and FA #1 records were created in opened state. Print screen is added from the desktop.
+Verified ability to create all records
+Created GA #2 319685
+Created MM #3 319687
+Created FA #1 319684
+Added all print screens
+Passed
+Step 18	
+Verify all the Meeting Minutes, Field Actions and PIA records created in this test are in closed state.
+All the Meeting Minutes, General Actions and PIA records are closed.
+Verified all records created in this test are in closed state
+Screenshot attached
+Passed
+Step 19	
+Verify PIA Facilitator can perform the 'Send for Approvals' activity for PIE record. Fill the Summary. 
+Verify Electronic Signature is required. Add screen prints.
+PIE record progresses to "Awaiting Prod Issue Escalation Approvals" state. 
+Applied Electronic Signature 
+Print screen is added from the desktop.
+Verified PIA Facilitator can post Send for Approvals Actiivty
+Verified e-sig
+Screenshots attached
+Passed
+Step 20	
+Log out and log in as Approvers as required. Verify the Approvers can approve the assigned activities for the PIE record. 
+Verify Electronic Signatures is required. 
+Add screen print of the electronic signature window.
+PIE record progresses to "Awaiting Prod Issue Escalation Approvals" state. Applied Electronic Signatures 
+Print screen is added from the Electronic signature window.
+Logged in as each approver
+Verified activity was available to approve record
+Verified e-sig appeared for each approver
+Printed all screens and attached
+Passed
+Step 21	
+Verify PIA Facilitator can perform the 'Close PIA Investigation' for PIE record. 
+Verify the record moves to 'Closed' state. 
+Add screen print of the record state from TrackWise desktop.
+PIE record progresses to "Closed" state and in Locked state. 
+Print screen is added from the desktop.
+Verified the PIE progressed to closed state
+Screenshots attached
+Passed
+Step 22	
+Logout of TW ETS <<<environment>>>
+Logged out of TW ETS <<<environment>>>.
+Logged out of QA
+Passed
