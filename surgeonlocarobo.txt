@@ -1,0 +1,88 @@
+***Settings ****
+
+Library    Selenium2Library
+
+Library    OperatingSystem
+
+Suite Setup    Setup chromedriver
+
+ 
+
+*** Test case ***
+
+Identify Surgeon Location
+
+    [Tags]    Surgeon location
+
+    Given Navigate to Health partner site
+
+    When Click on the Surgeon Locator
+
+    And Enter Required values and click submit
+
+    Then Search Results should display
+
+    [TearDown]    Close all browsers
+
+    
+
+*** Keywords ***
+
+Setup chromedriver
+
+    Set Environment Variable    webdriver.chrome.driver    ${EXECDIR}/chromderdriver.exe
+
+Navigate to Health partner site
+
+ 
+    open browser    https://weightlosssurgery.thehealthpartner.com/    browser=chrome
+
+Click on the Surgeon Locator
+
+    Click Element    xpath=//a[@title='Surgeon Locator Tool']
+
+    Execute Javascript    window.scroll(0,175)
+
+    Capture Page Screenshot   
+
+    
+
+Enter Required values and click submit
+
+    wait until element is visible    xpath=//input[@name='zipcode']
+
+    Input Text    xpath=//input[@name='zipcode']    76107
+
+  
+
+    mouse over    //select[@name='radius']
+
+    wait until element is visible    xpath=//select[@name='radius']
+
+    Select From List By Value    xpath=//select[@name='radius']    string:25
+
+    
+
+    Select Checkbox    xpath=//input[@name='Bypass']
+
+   
+
+    Click Element    xpath=//button[@class='btn btn-danger btn-surgeon-submit']
+
+  
+
+    wait until element is visible    xpath=//h2[@class='search-results']  
+
+    ${Value}=    Get Text    xpath=//h2[@class='search-results']
+
+    Set Test Variable    ${Content}    ${Value}
+
+    Sleep    2s
+
+${Result} should display   
+
+    Should Contain    ${Result}    ${Content}
+
+    Execute javascript    window.scroll(0,1000)
+
+    capture page screenshot

@@ -1,0 +1,88 @@
+*** Settings ***
+Library    OperatingSystem    
+Library    SeleniumLibrary    
+Suite Setup    Setup chrome driver
+
+*** Variables ***
+${Browser}  chrome
+${SiteURL}  https://weightlosssurgery.thehealthpartner.com/
+${Height}   50
+${Weight}   150
+${Delay}    3s
+
+          
+
+*** Test Cases ***
+Calculate BMI
+    Given I navigate to weightloss surgery site
+    Then I set Selenium speed
+    When I click compare surgeries
+    Then I select height
+    And I select weight
+    Then I click calculate BMI
+    Then I navigate to recipes page
+    Then I filter recipes
+    Then I filter Protein Type
+    Then I choose receipe
+    # Then I click image
+     Then I close browser
+    
+*** Keywords ***
+
+Setup chrome driver
+    Set Environment Variable    webdriver.chrome.driver    ${EXECDIR}/chromedriver.exe
+    
+I navigate to weightloss surgery site
+    Open Browser    https://weightlosssurgery.thehealthpartner.com/    browser=chrome
+    Maximize Browser Window
+I set Selenium speed
+    Set Selenium Implicit Wait  2 seconds 
+I click compare surgeries
+    Click Element  //a[text()='Compare Surgeries']    
+     
+I select height
+    Mouse over  name:height
+     wait until element is visible  //select[@name='height']
+    Select From List by Value  //select[@name='height']  ${Height}
+I select weight
+      Input Text  id:edit-weight  ${Weight}
+I click calculate BMI
+     Click Element  (//a[@href="#"])[1]
+     Set Selenium Implicit Wait  2 seconds 
+I navigate to recipes page
+    Click Element    //a[@title='Recipes Landing Page'] 
+    Sleep    2s  
+I filter recipes       
+    # Mouse Over    (//div[@class="form-checkboxes"])[1]/div[6]/label/input   
+    Scroll element into view  (//div[@class="form-checkboxes"])[1]/div[1]/label/input
+    Click Element    (//div[@class="form-checkboxes"])[1]/div[1]/label/input
+    Click Element    (//div[@class="form-checkboxes"])[1]/div[1]/label/input
+    Click Element    (//div[@class="form-checkboxes"])[1]/div[1]/label/input
+    # Click Element    (//div[@class="form-checkboxes"])[1]/div[7]/label/input 
+    # Select Checkbox    (//div[@class="form-checkboxes"])[1]/div[7]/label/in
+    # Click Element    (//div[@class="form-checkboxes"])[1]/div[7]/label/input
+    # Click Element    (//div[@class="form-checkboxes"])[1]/div[7]/label/input
+     # Select Checkbox    //label[text()='Sweet'] 
+     # Mouse Over    (//div[@class="form-checkboxes"])[1]/div[7]/label/input
+    # Double Click Element    (//div[@class="form-checkboxes"])[1]/div[7]/label/input
+     
+I filter Protein Type
+    # Mouse Over    (//p[@class='bulk-filter'])[3]/a[text()='All']
+     Scroll element into view      (//p[@class='bulk-filter'])[3]/a[text()='All']
+     click element    (//p[@class='bulk-filter'])[3]/a[text()='All']
+    Click Element    (//p[@class='bulk-filter'])[3]/a[text()='All']
+    # Click Element    (//p[@class='bulk-filter'])[3]/a[text()='All']
+   
+I choose receipe
+    Mouse Over  //div[@class='col-xs-12 col-sm-4 lc-article ng-scope']/a[@href='/recipes/banana-nut-protein-pancakes']
+    wait until element is visible  //div[@class='col-xs-12 col-sm-4 lc-article ng-scope']/a[@href='/recipes/banana-nut-protein-pancakes']
+    Click Element  //div[@class='col-xs-12 col-sm-4 lc-article ng-scope']/a[@href='/recipes/banana-nut-protein-pancakes']
+# I click image
+    # Mouse over  //div[@class='col-md-9 col-sm-9 recipes learning-center-content']/img[@src='/sites/default/files/2017-02/proteinBananaPancakes.jpg']    
+    # # Click element  //div[@class='col-md-9 col-sm-9 recipes learning-center-content']/img[@src='/sites/default/files/2017-02/proteinBananaPancakes.jpg']
+
+  Execute JavaScript    window.scrollTo(0, 600)
+    
+    
+I close browser
+     Close Browser  
